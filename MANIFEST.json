@@ -1,14 +1,19 @@
 {
   "version": "1.0.0",
-  "scope": "local film and cover only",
+  "scope": "local film and cover only; selective R1 integration not yet published",
+  "base_commit": "706ba2a898abe5847b5e649f3ff95e7e0f920079",
   "files": {
     ".gitignore": {
       "bytes": 68,
       "sha256": "7e5a099c8051fcc2475195962e12439667ff4efc8d5e59e9695bc69d43e64afa"
     },
     "DEPENDENCIES.json": {
-      "bytes": 1621,
-      "sha256": "c0c7242b2c5d1afcffdddd7168077b937fbe8c2f301131f960ac657f58b5dc44"
+      "bytes": 2082,
+      "sha256": "21f4c0356d774e3dfc60c2ea4a98dfe10144ecba0614674ee948dbe36dd8bdf6"
+    },
+    "LICENSE": {
+      "bytes": 1068,
+      "sha256": "e3fe665e5eb2a62589055265a36355a3e815af4328fa037c2d65ae1de468081f"
     },
     "LICENSE-MIT.txt": {
       "bytes": 1141,
@@ -19,16 +24,16 @@
       "sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
     },
     "PROVENANCE.json": {
-      "bytes": 7553,
-      "sha256": "c0572b88a137ba5d9533c22a71cb0c173c55a8803b3b4f51619faf7839780d3a"
+      "bytes": 9861,
+      "sha256": "23bb61b19697f02e7a22e19bc2b043a3913a37c7251958bbe40a0d17451549ac"
     },
     "README.md": {
-      "bytes": 7012,
-      "sha256": "1c0f8d3e6aa446336fc2991bc68af7800adb893199677082e498a797dc685a75"
+      "bytes": 7774,
+      "sha256": "7c8236215209f7464f2290aa1f049bbcd194ec7ff6bee831557d4c4a19002ce3"
     },
     "SKILL.md": {
-      "bytes": 1141,
-      "sha256": "053249a22af9d126877f7e1a47b5137bc8d1612f2f466c204cec3bdd0ff52c9f"
+      "bytes": 1377,
+      "sha256": "258b5c5867fe2d16f369d0384cde32205be5a0f9fbe6d213b96bc117947b0b2b"
     },
     "VERSION": {
       "bytes": 6,
@@ -41,6 +46,22 @@
     "config/local.template.json": {
       "bytes": 172,
       "sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422"
+    },
+    "docs/R1-INTEGRATION.md": {
+      "bytes": 2924,
+      "sha256": "fe585495f28baeb0bf5bf82a2512294a693cc540c258aad76802d3866369b5c1"
+    },
+    "environment/NIXPKGS-NOTICE.txt": {
+      "bytes": 1335,
+      "sha256": "0d159e129622edc6380cb33d8b3259babacb0b2923363bc0545ab52d26180682"
+    },
+    "environment/shell.nix": {
+      "bytes": 1234,
+      "sha256": "2fcfa5e76c18beafe5607693f8952ea2684e711067d8fe2f4e9ce662e482a272"
+    },
+    "environment/sources.json": {
+      "bytes": 2000,
+      "sha256": "c426ad740d28cb1ec830a7ae18aae0ea0681702ade046cbbdb62eacf87f9cf8a"
     },
     "runtime/daily-on-this-day/duration_plan.py": {
       "bytes": 2373,
@@ -75,8 +96,8 @@
       "sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7"
     },
     "scripts/run.py": {
-      "bytes": 9909,
-      "sha256": "4eb8fafb13163c3d71cbba43739a859817a2e8cf0285825321bd4069d1206091"
+      "bytes": 10534,
+      "sha256": "0eceb0e061703d64328e918ea20793b9d53879d0bf959d8830df276638f3df81"
     },
     "tests/smoke_cpu.py": {
       "bytes": 2991,
@@ -87,8 +108,8 @@
       "sha256": "1e2e96c17a184e12bb4ccf22ac30b6c6f85ce43a5ff142732b13a0078acbc62b"
     },
     "tests/test_local.py": {
-      "bytes": 7345,
-      "sha256": "9cdb1eefe084b5e6c426e9567684f70e80ace3493885f1629be19d3699459597"
+      "bytes": 9908,
+      "sha256": "10f1da6dfffbbb37e9b21f0d689816bfdba77c0e96ea565f99fc54ccb26708e6"
     }
   }
 }

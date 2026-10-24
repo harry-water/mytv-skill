@@ -14,7 +14,7 @@
     "ssim"
   ],
   "encoder_backend": {
-    "nvenc": "h264_nvenc; final 28-photo/4-video 240.233333-second full synthetic pipeline and strict -xerror decode passed once",
+    "nvenc": "Baseline706ba2a full NVENC synthetic acceptance passed; selective-merge entry only regression-tested, renderer/encoding bytes unchanged",
     "cpu": "libx264; two-second encode/cover smoke passed, full render untested"
   },
   "font": "external user-provided licensed CJK font; not bundled",
@@ -43,6 +43,16 @@
     "strict_decode": true,
     "ordinary_unit_tests": 18,
     "optimized_unit_tests": 18,
-    "player_tested": false
-  }
+    "player_tested": false,
+    "directly_applies_to_commit": "706ba2a898abe5847b5e649f3ff95e7e0f920079",
+    "merged_entry_full_rerun": false
+  },
+  "selective_merge_validation": {
+    "ordinary_tests": 22,
+    "optimized_tests": 22,
+    "full_render_rerun": false,
+    "recipe_executed": false,
+    "new_dependencies_installed": false
+  },
+  "optional_recipe": "environment/shell.nix; pinned source details and R1-only execution provenance in environment/sources.json"
 }

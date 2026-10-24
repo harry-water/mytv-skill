@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "tool_source": {
+    "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1069601.e9b9cbecbf6c/nixexprs.tar.xz",
+    "narHash": "sha256-kkWAS4mE+fmi+u3mxwD9/bfX6DGJ49Tv8O9kzN5r0HQ=",
+    "revision": "e9b9cbecbf6c25ca26c150d78570e6332694a129",
+    "attributes": {
+      "python": "python313",
+      "ffmpeg": "ffmpeg",
+      "imagemagick": "imagemagick"
+    },
+    "evaluated_versions": {
+      "python": "3.13.15",
+      "ffmpeg": "9.0.1",
+      "imagemagick": "7.1.2-29"
+    }
+  },
+  "third_party_notice": "NIXPKGS-NOTICE.txt; source-revision COPYING checked read-only, not a project-wide license",
+  "supplied_R1_evidence": {
+    "existing_host_pure_shell_executed": true,
+    "dependencies_fetched": true,
+    "regression_cases": 22,
+    "R1_entry_sha256": "240b921f3abb551a02f50df961a165c1b4eee13d98334a395939b7cec4fc179d",
+    "full_film_regenerated": false,
+    "clean_os_or_empty_store": false,
+    "new_driver_install_tested": false
+  },
+  "this_selective_merge": {
+    "recipe_static_reviewed": true,
+    "recipe_executed_with_merged_entry": false,
+    "dependencies_installed": false,
+    "runtime_binaries_bundled": false
+  },
+  "driver": "Uses an already installed compatible host NVIDIA driver; never installs/reconfigures it",
+  "optional_font": {
+    "upstream_download_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Bold.otf",
+    "upstream_download_bytes": 17002248,
+    "upstream_download_sha256": "b5f0d1a190a7f9b43c310a8850630af12553df32c4c050543f9059732d9b4c0a",
+    "upstream_license_url": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE",
+    "upstream_license_sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+  },
+  "font_qualification": "OFL1.1 license URL checked read-only; font bytes not bundled or downloaded here. R1 supplied short 3.3s AV/cover evidence only; not a full merged-entry render or historical-font identity proof."
+}

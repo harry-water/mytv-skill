@@ -63,6 +63,9 @@ class LocalTests(unittest.TestCase):
   before={p:p.read_bytes() for p in self.inputs.iterdir()}
   with patch.object(sys,'argv',argv),patch.object(m,'doctor',side_effect=lambda font,backend:{'font_sha256':m.sha(font),'backend':backend}),patch.object(m.subprocess,'run'),patch.object(m,'execute',side_effect=execute):
    m.main();film=out/self.day.isoformat()/'daily-render.mp4';first=film.stat().st_mtime_ns;m.main();self.assertEqual(len(calls),2);self.assertEqual(film.stat().st_mtime_ns,first)
+   done=out/self.day.isoformat()/'adapter-receipt.json';original_receipt=done.read_bytes();legacy=json.loads(original_receipt);legacy.pop('receipt_schema_version');done.write_text(json.dumps(legacy));legacy_bytes=done.read_bytes()
+   with self.assertRaisesRegex(ValueError,'schema'):m.main()
+   self.assertEqual(done.read_bytes(),legacy_bytes);self.assertEqual(film.stat().st_mtime_ns,first);self.assertEqual(len(calls),2);done.write_bytes(original_receipt)
    self.font.write_bytes(b'changed font')
    with self.assertRaisesRegex(ValueError,'differs'):m.main()
    self.assertEqual(film.read_bytes(),b'unit-film')
@@ -76,6 +79,31 @@ class LocalTests(unittest.TestCase):
      with self.assertRaisesRegex(ValueError,'filter-special'):m.main()
      proc.assert_not_called()
     with self.assertRaisesRegex(ValueError,'filter-special'):m.validate_filter_path(str(self.font)+char)
+ def video_rows(self):
+  photo=self.rows(1)[0];(self.inputs/'片段 空格.mp4').write_bytes(b'standard-library unit fixture, no decoder acceptance claim')
+  return [photo,{'file':'片段 空格.mp4','kind':'video','capture_date':'2029-10-24','chapter':'same-day','video_start_seconds':0,'video_speed':1}]
+ def test_invalid_video_speed_before_encoder(self):
+  for speed in [0.5,5,float('nan'),float('inf')]:
+   rows=self.video_rows();rows[1]['video_speed']=speed
+   with self.subTest(speed=speed),patch.object(m.subprocess,'run'),patch.object(m.subprocess,'check_output',return_value='{"format":{"duration":"12"}}'),patch.object(m,'doctor') as doctor,patch.object(m,'execute') as execute:
+    with self.assertRaises(ValueError):m.selection(rows,self.inputs,self.day)
+    doctor.assert_not_called();execute.assert_not_called()
+ def test_video_excerpt_out_of_bounds_before_output(self):
+  rows=self.video_rows();rows[1]['video_start_seconds']=3.1
+  with patch.object(m.subprocess,'run'),patch.object(m.subprocess,'check_output',return_value='{"format":{"duration":"12"}}'):
+   with self.assertRaisesRegex(ValueError,'bounds'):m.selection(rows,self.inputs,self.day)
+  self.assertFalse((self.p/'out').exists())
+ def test_video_exact_boundary_preserves_row(self):
+  rows=self.video_rows();rows[1]['video_start_seconds']=3
+  before={p:p.read_bytes() for p in self.inputs.iterdir()}
+  with patch.object(m.subprocess,'run'),patch.object(m.subprocess,'check_output',return_value='{"format":{"duration":"12"}}'):
+   selected=m.selection(rows,self.inputs,self.day)
+  self.assertEqual(selected[1]['video_start_seconds'],3);self.assertEqual(selected[1]['video_speed'],1)
+  self.assertEqual(before,{p:p.read_bytes() for p in self.inputs.iterdir()})
+ def test_receipt_schema_current_and_unknown(self):
+  m.validate_receipt_schema({'receipt_schema_version':2})
+  for value in [{},{'receipt_schema_version':1},{'receipt_schema_version':3},{'receipt_schema_version':'2'},{'receipt_schema_version':True},None]:
+   with self.subTest(receipt=value),self.assertRaisesRegex(ValueError,'schema'):m.validate_receipt_schema(value)
  def test_optimized_mode_still_rejects(self):
   code="import importlib.util; s=importlib.util.spec_from_file_location('x',"+repr(str(ROOT/'scripts/run.py'))+");m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.require(False,'rejected')"
   r=subprocess.run([sys.executable,'-O','-c',code],capture_output=True,text=True,timeout=5);self.assertNotEqual(r.returncode,0);self.assertIn('ValueError: rejected',r.stderr)

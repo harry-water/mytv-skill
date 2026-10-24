@@ -14,7 +14,13 @@
       "path": "DEPENDENCIES.json",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "c0c7242b2c5d1afcffdddd7168077b937fbe8c2f301131f960ac657f58b5dc44"
+      "current_sha256": "21f4c0356d774e3dfc60c2ea4a98dfe10144ecba0614674ee948dbe36dd8bdf6"
+    },
+    {
+      "path": "LICENSE",
+      "origin": "Existing user initial-commit LICENSE preserved unchanged",
+      "status": "MIT notice, no content modification",
+      "current_sha256": "e3fe665e5eb2a62589055265a36355a3e815af4328fa037c2d65ae1de468081f"
     },
     {
       "path": "LICENSE-MIT.txt",
@@ -32,12 +38,12 @@
       "path": "README.md",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "1c0f8d3e6aa446336fc2991bc68af7800adb893199677082e498a797dc685a75"
+      "current_sha256": "7c8236215209f7464f2290aa1f049bbcd194ec7ff6bee831557d4c4a19002ce3"
     },
     {
       "path": "SKILL.md",
       "baseline_sha256": "4a72e32cd496b590b92cf8fbdacc62bc7989ad0b010a36d7bd9bee9107f6db4e",
-      "current_sha256": "053249a22af9d126877f7e1a47b5137bc8d1612f2f466c204cec3bdd0ff52c9f",
+      "current_sha256": "258b5c5867fe2d16f369d0384cde32205be5a0f9fbe6d213b96bc117947b0b2b",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -61,6 +67,30 @@
       "current_sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
+    },
+    {
+      "path": "docs/R1-INTEGRATION.md",
+      "origin": "new project-original selective integration",
+      "status": "MIT",
+      "current_sha256": "fe585495f28baeb0bf5bf82a2512294a693cc540c258aad76802d3866369b5c1"
+    },
+    {
+      "path": "environment/NIXPKGS-NOTICE.txt",
+      "origin": "R1 pinned Nix recipe/source metadata selectively adapted; tools-source COPYING checked read-only",
+      "status": "Project-original template MIT; upstream Nixpkgs terms retained in NIXPKGS-NOTICE.txt; not applied to third-party binaries",
+      "current_sha256": "0d159e129622edc6380cb33d8b3259babacb0b2923363bc0545ab52d26180682"
+    },
+    {
+      "path": "environment/shell.nix",
+      "origin": "R1 pinned Nix recipe/source metadata selectively adapted; tools-source COPYING checked read-only",
+      "status": "Project-original template MIT; upstream Nixpkgs terms retained in NIXPKGS-NOTICE.txt; not applied to third-party binaries",
+      "current_sha256": "2fcfa5e76c18beafe5607693f8952ea2684e711067d8fe2f4e9ce662e482a272"
+    },
+    {
+      "path": "environment/sources.json",
+      "origin": "R1 pinned Nix recipe/source metadata selectively adapted; tools-source COPYING checked read-only",
+      "status": "Project-original template MIT; upstream Nixpkgs terms retained in NIXPKGS-NOTICE.txt; not applied to third-party binaries",
+      "current_sha256": "c426ad740d28cb1ec830a7ae18aae0ea0681702ade046cbbdb62eacf87f9cf8a"
     },
     {
       "path": "runtime/daily-on-this-day/duration_plan.py",
@@ -120,7 +150,7 @@
     {
       "path": "scripts/run.py",
       "baseline_sha256": "f961838445beea7deabd8ca852af38fa3c1d252c3f9f32008855f86a319b69f5",
-      "current_sha256": "4eb8fafb13163c3d71cbba43739a859817a2e8cf0285825321bd4069d1206091",
+      "current_sha256": "0eceb0e061703d64328e918ea20793b9d53879d0bf959d8830df276638f3df81",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -140,7 +170,14 @@
       "path": "tests/test_local.py",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "9cdb1eefe084b5e6c426e9567684f70e80ace3493885f1629be19d3699459597"
+      "current_sha256": "10f1da6dfffbbb37e9b21f0d689816bfdba77c0e96ea565f99fc54ccb26708e6"
     }
-  ]
+  ],
+  "selective_R1_integration": {
+    "base_commit": "706ba2a898abe5847b5e649f3ff95e7e0f920079",
+    "private_R1_zip_sha256": "150fb1dc3dd758a38b05ecbb22c6937cbb00383fcf5a66b5602b96af6d2d94e0",
+    "scope": "Only early clip validation, explicit receipt schema and optional pinned dependency documentation; no renderer replacement",
+    "ownership": "Project-original material owned by Harry Water remains MIT; Nixpkgs notice retained; font not distributed",
+    "validation": "Merged-entry ordinary/-O regression only; R1 pure shell evidence not rerun here; baseline full-render evidence not relabelled"
+  }
 }

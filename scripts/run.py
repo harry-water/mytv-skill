@@ -5,6 +5,9 @@ import argparse, datetime as dt, hashlib, json, os, shutil, subprocess, sys, sig
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
 REQUIRED_FILTERS=('zscale','drawtext','xfade','acrossfade','ssim')
+RECEIPT_SCHEMA_VERSION=2
+def validate_receipt_schema(receipt):
+ require(isinstance(receipt,dict) and type(receipt.get('receipt_schema_version')) is int and receipt['receipt_schema_version']==RECEIPT_SCHEMA_VERSION,'Legacy or unsupported receipt schema; preserve output and use a new output_root')
 FILTER_SPECIAL="':\\\n\r,;[]"
 def validate_filter_path(path):
  require(not any(c in str(path) for c in FILTER_SPECIAL),'Unsupported filter-special character in path')
@@ -54,6 +57,8 @@ def selection(raw,inputs,day):
  require(len(raw)<=46,'Too many assets')
  require(all(isinstance(r,dict) for r in raw),'Selection entries must be objects')
  require(any(r.get('kind')=='photo' for r in raw),'At least one photo is required for static validation and cover')
+ sys.path.insert(0,str(ROOT/'runtime/daily-on-this-day'))
+ from video_clip import clip_spec
  rows=[];seen=set()
  for i,r in enumerate(raw):
   require(isinstance(r.get('file'),str) and not Path(r['file']).is_absolute(),'Input must be a relative path')
@@ -67,6 +72,7 @@ def selection(raw,inputs,day):
   else:
    m=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','json',str(p)],text=True,timeout=30));meta={'QuickTime:Duration':float(m['format']['duration'])}
   s=p.stat();rows.append({'id':i+1,'source_id':'configured-local-input','source_path':str(p),'kind':kind,'capture_date':capture.isoformat(),'year':capture.year,'chapter':chapter,'input_sha256':digest,'sha256':digest,'original_stat':[s.st_size,s.st_mtime_ns],'metadata_json':meta,'caption':capture.strftime('%Y.%m.%d'),'category':{'same-day':'同日回忆','month-memory':'本月回忆','season':'季节补景','trip':'行程延伸'}[chapter],'video_start_seconds':r.get('video_start_seconds',0),'video_speed':r.get('video_speed',1)})
+  if kind=='video':clip_spec(rows[-1])  # Validate before doctor/encoding/output creation; do not alter the row.
  require(sum(x['chapter']=='season' for x in rows)/len(rows)<=.2,'Too many seasonal supplements')
  trip=[dt.date.fromisoformat(x['capture_date']) for x in rows if x['chapter']=='trip']
  if trip:
@@ -75,7 +81,7 @@ def selection(raw,inputs,day):
  return rows
 def fingerprint(rows,cfg,policy,day,runtime):
  closure={str(p.relative_to(ROOT)):sha(p) for folder in ('scripts','runtime','config') for p in sorted((ROOT/folder).rglob('*')) if p.is_file() and p.suffix in ('.py','.json')}
- value={'rows':rows,'config':cfg,'policy':policy,'date':day.isoformat(),'runtime':runtime,'code_closure':closure}
+ value={'receipt_schema_version':RECEIPT_SCHEMA_VERSION,'rows':rows,'config':cfg,'policy':policy,'date':day.isoformat(),'runtime':runtime,'code_closure':closure}
  return hashlib.sha256(json.dumps(value,sort_keys=True).encode()).hexdigest()
 def execute(cmd,cwd,log):
  with log.open('x') as f:
@@ -105,7 +111,7 @@ def main():
  with os.fdopen(fd,'a') as lock:
   fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB);done=output/'adapter-receipt.json'
   if done.exists():
-   j=json.loads(done.read_text());require(j['fingerprint']==fp and sha(output/'daily-render.mp4')==j['film_sha256'] and sha(output/'daily-render-thumb.jpg')==j['thumbnail_sha256'],'Existing output differs; use a new output_root')
+   j=json.loads(done.read_text());validate_receipt_schema(j);require(j['fingerprint']==fp and sha(output/'daily-render.mp4')==j['film_sha256'] and sha(output/'daily-render-thumb.jpg')==j['thumbnail_sha256'],'Existing output differs; use a new output_root')
    print(json.dumps({'status':'idempotent_reuse','film_sha256':j['film_sha256']}));return
   require(set(p.name for p in output.iterdir())=={'adapter.lock'},'Partial/existing output preserved; use a new output_root')
   write(output/'selection.json',rows);style={'version':'mytv-v1.0.0-neutral','font_bold':str(font),'font_sha256':sha(font),'font_weight':700,'font_sizes':{'title':112,'subtitle':48,'caption':42,'category':36,'ai_label':26},'themes_by_month':{}}
@@ -113,5 +119,5 @@ def main():
   shutil.copy2(ROOT/'runtime/daily-on-this-day/render-template.py',output/'render.py');os.environ['MYTV_RUNTIME_ROOT']=str(ROOT/'runtime');begin=time.monotonic();execute([sys.executable,str(output/'render.py')],output,output/'adapter-render.log')
   rr=json.loads((output/'render-receipt.json').read_text());prepared=json.loads((output/'prepared-final-selection.json').read_text());cover=next(x['asset'] for x in prepared if x['kind']=='photo')
   execute([sys.executable,str(ROOT/'runtime/prepare_video_presentation.py'),'--video',str(output/'daily-render.mp4'),'--title','历史上的今天 · '+day.isoformat(),'--cover-source',cover,'--expected-video-sha256',rr['sha256']],output,output/'adapter-cover.log')
-  write(done,{'status':'rendered_and_covered','fingerprint':fp,'film_sha256':sha(output/'daily-render.mp4'),'thumbnail_sha256':sha(output/'daily-render-thumb.jpg'),'duration_seconds':rr['duration'],'photos':rr['photos'],'video_clips':rr['video_clips'],'elapsed_render_and_cover_seconds':round(time.monotonic()-begin,3),'runtime':runtime,'television_tested':False,'network_used':False});print(done.read_text())
+  write(done,{'receipt_schema_version':RECEIPT_SCHEMA_VERSION,'status':'rendered_and_covered','fingerprint':fp,'film_sha256':sha(output/'daily-render.mp4'),'thumbnail_sha256':sha(output/'daily-render-thumb.jpg'),'duration_seconds':rr['duration'],'photos':rr['photos'],'video_clips':rr['video_clips'],'elapsed_render_and_cover_seconds':round(time.monotonic()-begin,3),'runtime':runtime,'television_tested':False,'network_used':False});print(done.read_text())
 if __name__=='__main__':main()
