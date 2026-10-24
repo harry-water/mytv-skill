@@ -14,7 +14,7 @@
       "path": "DEPENDENCIES.json",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "89559e3832edfa941182125219759e684da66c58da4a06314ed5c50658cc384e"
+      "current_sha256": "8e9181c162b6284d743ab08c064811b35e909de4690a6936d27b033294b1a96d"
     },
     {
       "path": "LICENSE",
@@ -32,18 +32,18 @@
       "path": "LICENSE-SCOPE.md",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
+      "current_sha256": "bd82659544cb83319d6b235cddabb7c680a1114989a22dba26106bfcf0d12cfb"
     },
     {
       "path": "README.md",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "24df64cbc98715859ea47b443f57172e59eb90d509e0a832c154e586bd4c09d5"
+      "current_sha256": "46aa079b0350af3408496850ad5b6d750b9fcc6e256f98374cf49a57103f852b"
     },
     {
       "path": "SKILL.md",
       "baseline_sha256": "4a72e32cd496b590b92cf8fbdacc62bc7989ad0b010a36d7bd9bee9107f6db4e",
-      "current_sha256": "d7bd19ffe36d89a7b9190b1e095f254575978cb66a075890d0440947647cb757",
+      "current_sha256": "2b9e8856d482c76c5bc441a32b5b3eed52eb3f394163956ece64ec137705b7fd",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -72,7 +72,7 @@
       "path": "docs/R1-INTEGRATION.md",
       "origin": "new project-original selective integration",
       "status": "MIT",
-      "current_sha256": "61e71e2ee4354980d2b51a2f5d09fe46f3ac41661efebd3f5bc5b16d9e4952d0"
+      "current_sha256": "b9e9fcaf0643b626db050fadeb439a17fa59ec549fc159dafa7ddc8bc1fd9e57"
     },
     {
       "path": "environment/NIXPKGS-NOTICE.txt",
@@ -93,6 +93,30 @@
       "current_sha256": "eb6acc1b0df335cd0db25b6bc955186a02fce6ac62354564c5e97818e1906362"
     },
     {
+      "path": "evidence/metadata-revision-acceptance.json",
+      "origin": "New project-original synthetic-only metadata revision acceptance summary",
+      "status": "MIT; owner authorization",
+      "current_sha256": "3678ad1d8c4f9874abea9f0d68e1cd391be209b6639332cf71cc2b19ff5d107a"
+    },
+    {
+      "path": "evidence/synthetic-acceptance.json",
+      "origin": "Project-original synthetic-only acceptance summary; no private logs or machine identifiers",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "47f2a357dfa9610fcf2ea1bb1386235fcea74761b5f278f4d70370310d775bec"
+    },
+    {
+      "path": "examples/photo.jpg.mytv.json",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "976eb7e7d829abd7c43c647604a25a661874fe0047975b84e114ca85e986ce07"
+    },
+    {
+      "path": "examples/pipeline.json",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "cefdb6dbd23807dc84ae23df2bc6519daee04d5e48ddf6263cbd63a1daea7672"
+    },
+    {
       "path": "runtime/daily-on-this-day/duration_plan.py",
       "baseline_sha256": "66fe3f3573cb9a9db69b947f70bef58042e63ff606802568862bfaf314a62f18",
       "current_sha256": "8f7e86e2fce8757f9d7854dab72ed065e3c0a393003758a1676ea92c92907549",
@@ -108,7 +132,7 @@
     {
       "path": "runtime/daily-on-this-day/render-template.py",
       "baseline_sha256": "aa7bfe9502a371f9b8545d0fb5d034cdced758bc8cc444daeadb0597c1f90ef9",
-      "current_sha256": "2dc5423141aa7ee269943cd24a0c9a4e21e57631987d7471785362471d7680b6",
+      "current_sha256": "a811b959bcd4bdabad230c440b7e7d88bc5a122344021a67ef030297b361779c",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
     },
@@ -141,6 +165,30 @@
       "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
     },
     {
+      "path": "schemas/pipeline.schema.json",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "9c9640bca02b29ca2727d37d657fcc4c934363bda208c4a66f57f6ad51b61df5"
+    },
+    {
+      "path": "schemas/selection.schema.json",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "d203bdcaf0398b14b08ecd8f8bd50524b0b03cd85b7843015be280e7ca9061cb"
+    },
+    {
+      "path": "schemas/sidecar.schema.json",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "e88f4c6aceb3222f61ef7136ded61cf452424255dad9946ab2a3d7c936b31a34"
+    },
+    {
+      "path": "scripts/make_demo.py",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "accc315934761d0ce1b5db80182b6ad706b38d6e9f7763cd5c9f6d26d95af68a"
+    },
+    {
       "path": "scripts/make_synthetic.py",
       "baseline_sha256": "6b2ec2d5fd65f7f2b1019127102794f991f4edcec98a9e124989235b7061b188",
       "current_sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7",
@@ -148,9 +196,21 @@
       "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
     },
     {
+      "path": "scripts/media_metadata.py",
+      "origin": "New project-original metadata provenance/strict validation/attempt history code and synthetic regression",
+      "status": "MIT; owner authorization",
+      "current_sha256": "dc986be32ad221f7734696c160d1670da865a580f3769f3973631933e9fe393e"
+    },
+    {
+      "path": "scripts/pipeline.py",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "daeb9c224b6504588bccf64d63859c5ea85bcc23c66a2b6723fd67521586a3e2"
+    },
+    {
       "path": "scripts/run.py",
       "baseline_sha256": "f961838445beea7deabd8ca852af38fa3c1d252c3f9f32008855f86a319b69f5",
-      "current_sha256": "48cd6baa2e721c08c0ae117711c80d558874034122101022fcb820a538bb8184",
+      "current_sha256": "9ef90c277d76641d62a9c34931cdbef06e792fb302c1434fbee457908a9ea74e",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -171,6 +231,24 @@
       "origin": "new original revision",
       "status": "MIT",
       "current_sha256": "c09451e114706e2c1c3cda876830a8351fbbab777f3ba2457df5ea049ba2aa7b"
+    },
+    {
+      "path": "tests/test_media_metadata.py",
+      "origin": "New project-original metadata provenance/strict validation/attempt history code and synthetic regression",
+      "status": "MIT; owner authorization",
+      "current_sha256": "d4826b947c65b4a12e48c8db467582fa9d1d4c518496f7d55419c4a9d1eabd0a"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "origin": "New project-original collect-edit-deliver implementation and synthetic-only contracts/tests",
+      "status": "MIT; Harry Water owner authorization",
+      "current_sha256": "47f7d31239a8099fdb44044ba07aa4effcbe6e0aaa275a9618476dcfb44cd45f"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "origin": "Project-original version 1.0.0 release documentation; execution unchanged",
+      "status": "MIT; owner authorization",
+      "current_sha256": "bbc2c2a29d65c6135450d4bdcfeeff5162a71a9d9006ecf9261294169f25e330"
     }
   ],
   "selective_R1_integration": {
@@ -182,5 +260,18 @@
   "privacy_truthfulness_revision": {
     "scope": "Remove individual device/driver and private evidence fingerprints; distinguish product automation goal from public rendering component; report date-only captions truthfully",
     "validation": "ordinary and optimized 24 regressions; no full render, Nix environment, or physical playback rerun"
+  },
+  "metadata_revision": {
+    "scope": "Read-only existing ExifTool/ffprobe, strict decode and immutable attempt evidence; no third-party code bundled",
+    "validation": "Final current code: one fresh metadata-driven full chain plus final 57 real regressions; source GPS stripped only on derived canvas; no production access",
+    "execution_closure_sha256": "58e866076ab68ec6ee6a19b46f93be80d4b0735d6e168f1abc14b20e74ee94f1",
+    "source_version": "1.0.0"
+  },
+  "previous_pipeline_revision": {
+    "base_commit": "fdafafc74857c52da2c43f4bd0eef83b145bcb8a",
+    "scope": "single Skill, collect-edit-deliver manual; no cloud login/device control/system service installation",
+    "candidate_only": true,
+    "validation": "Two new complete synthetic NVENC workflows (183.2s each) plus final 47 ordinary/optimized regressions; exact executable closure verified against exercised archive; orientation component separately verified; physical playback/clean install untested",
+    "context": "Historical pre-metadata validation snapshot"
   }
 }

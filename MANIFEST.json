@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "scope": "local film and cover component; automation goal not fully implemented; privacy and truthful receipt revision",
-  "base_commit": "da33343b4056f7ce94619cfb8f9a992c224554d2",
+  "scope": "MyTV 1.0.0 local collect-edit-deliver, bounded metadata validation and derived-cover privacy",
+  "base_commit": "fdafafc74857c52da2c43f4bd0eef83b145bcb8a",
   "files": {
     ".gitignore": {
       "bytes": 68,
       "sha256": "7e5a099c8051fcc2475195962e12439667ff4efc8d5e59e9695bc69d43e64afa"
     },
     "DEPENDENCIES.json": {
-      "bytes": 2359,
-      "sha256": "89559e3832edfa941182125219759e684da66c58da4a06314ed5c50658cc384e"
+      "bytes": 4168,
+      "sha256": "8e9181c162b6284d743ab08c064811b35e909de4690a6936d27b033294b1a96d"
     },
     "LICENSE": {
       "bytes": 1068,
@@ -20,20 +20,24 @@
       "sha256": "73d01fefe46d083be1c01964049ae98424cd7e610cccf999bca27fa5cbf1c530"
     },
     "LICENSE-SCOPE.md": {
-      "bytes": 900,
-      "sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
+      "bytes": 1009,
+      "sha256": "bd82659544cb83319d6b235cddabb7c680a1114989a22dba26106bfcf0d12cfb"
     },
     "PROVENANCE.json": {
-      "bytes": 10114,
-      "sha256": "50c3dbd4c08d69f48ad8c67cbce1f84247218d0f4df5fc27ed09b1f42a3c8424"
+      "bytes": 15190,
+      "sha256": "a6ec3e70e8defd3267d3889c74094cdaf0bfce3a9c32a90f38bff0e8773f75f5"
     },
     "README.md": {
-      "bytes": 9364,
-      "sha256": "24df64cbc98715859ea47b443f57172e59eb90d509e0a832c154e586bd4c09d5"
+      "bytes": 12836,
+      "sha256": "46aa079b0350af3408496850ad5b6d750b9fcc6e256f98374cf49a57103f852b"
+    },
+    "RELEASE-NOTES.md": {
+      "bytes": 2763,
+      "sha256": "bbc2c2a29d65c6135450d4bdcfeeff5162a71a9d9006ecf9261294169f25e330"
     },
     "SKILL.md": {
-      "bytes": 1772,
-      "sha256": "d7bd19ffe36d89a7b9190b1e095f254575978cb66a075890d0440947647cb757"
+      "bytes": 2241,
+      "sha256": "2b9e8856d482c76c5bc441a32b5b3eed52eb3f394163956ece64ec137705b7fd"
     },
     "VERSION": {
       "bytes": 6,
@@ -48,8 +52,8 @@
       "sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422"
     },
     "docs/R1-INTEGRATION.md": {
-      "bytes": 2990,
-      "sha256": "61e71e2ee4354980d2b51a2f5d09fe46f3ac41661efebd3f5bc5b16d9e4952d0"
+      "bytes": 3182,
+      "sha256": "b9e9fcaf0643b626db050fadeb439a17fa59ec549fc159dafa7ddc8bc1fd9e57"
     },
     "environment/NIXPKGS-NOTICE.txt": {
       "bytes": 1335,
@@ -63,6 +67,22 @@
       "bytes": 1909,
       "sha256": "eb6acc1b0df335cd0db25b6bc955186a02fce6ac62354564c5e97818e1906362"
     },
+    "evidence/metadata-revision-acceptance.json": {
+      "bytes": 2236,
+      "sha256": "3678ad1d8c4f9874abea9f0d68e1cd391be209b6639332cf71cc2b19ff5d107a"
+    },
+    "evidence/synthetic-acceptance.json": {
+      "bytes": 2387,
+      "sha256": "47f2a357dfa9610fcf2ea1bb1386235fcea74761b5f278f4d70370310d775bec"
+    },
+    "examples/photo.jpg.mytv.json": {
+      "bytes": 188,
+      "sha256": "976eb7e7d829abd7c43c647604a25a661874fe0047975b84e114ca85e986ce07"
+    },
+    "examples/pipeline.json": {
+      "bytes": 792,
+      "sha256": "cefdb6dbd23807dc84ae23df2bc6519daee04d5e48ddf6263cbd63a1daea7672"
+    },
     "runtime/daily-on-this-day/duration_plan.py": {
       "bytes": 2373,
       "sha256": "8f7e86e2fce8757f9d7854dab72ed065e3c0a393003758a1676ea92c92907549"
@@ -72,8 +92,8 @@
       "sha256": "b6845264c4e14fc9191c4b8ac56031aaaa81468e54176f0bd474d99ae89e5bd5"
     },
     "runtime/daily-on-this-day/render-template.py": {
-      "bytes": 15851,
-      "sha256": "2dc5423141aa7ee269943cd24a0c9a4e21e57631987d7471785362471d7680b6"
+      "bytes": 15861,
+      "sha256": "a811b959bcd4bdabad230c440b7e7d88bc5a122344021a67ef030297b361779c"
     },
     "runtime/daily-on-this-day/static-photo-check.py": {
       "bytes": 3748,
@@ -91,13 +111,37 @@
       "bytes": 205,
       "sha256": "6680e3ba4169c5fb852f067283cfa2ea608f7fe76f167bcd73692b287b3b1173"
     },
+    "schemas/pipeline.schema.json": {
+      "bytes": 2807,
+      "sha256": "9c9640bca02b29ca2727d37d657fcc4c934363bda208c4a66f57f6ad51b61df5"
+    },
+    "schemas/selection.schema.json": {
+      "bytes": 812,
+      "sha256": "d203bdcaf0398b14b08ecd8f8bd50524b0b03cd85b7843015be280e7ca9061cb"
+    },
+    "schemas/sidecar.schema.json": {
+      "bytes": 1777,
+      "sha256": "e88f4c6aceb3222f61ef7136ded61cf452424255dad9946ab2a3d7c936b31a34"
+    },
+    "scripts/make_demo.py": {
+      "bytes": 3206,
+      "sha256": "accc315934761d0ce1b5db80182b6ad706b38d6e9f7763cd5c9f6d26d95af68a"
+    },
     "scripts/make_synthetic.py": {
       "bytes": 1987,
       "sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7"
     },
+    "scripts/media_metadata.py": {
+      "bytes": 9492,
+      "sha256": "dc986be32ad221f7734696c160d1670da865a580f3769f3973631933e9fe393e"
+    },
+    "scripts/pipeline.py": {
+      "bytes": 40262,
+      "sha256": "daeb9c224b6504588bccf64d63859c5ea85bcc23c66a2b6723fd67521586a3e2"
+    },
     "scripts/run.py": {
-      "bytes": 10535,
-      "sha256": "48cd6baa2e721c08c0ae117711c80d558874034122101022fcb820a538bb8184"
+      "bytes": 10672,
+      "sha256": "9ef90c277d76641d62a9c34931cdbef06e792fb302c1434fbee457908a9ea74e"
     },
     "tests/smoke_cpu.py": {
       "bytes": 2991,
@@ -110,6 +154,14 @@
     "tests/test_local.py": {
       "bytes": 10932,
       "sha256": "c09451e114706e2c1c3cda876830a8351fbbab777f3ba2457df5ea049ba2aa7b"
+    },
+    "tests/test_media_metadata.py": {
+      "bytes": 9251,
+      "sha256": "d4826b947c65b4a12e48c8db467582fa9d1d4c518496f7d55419c4a9d1eabd0a"
+    },
+    "tests/test_pipeline.py": {
+      "bytes": 20125,
+      "sha256": "47f7d31239a8099fdb44044ba07aa4effcbe6e0aaa275a9618476dcfb44cd45f"
     }
   }
 }

@@ -14,7 +14,7 @@
     "ssim"
   ],
   "encoder_backend": {
-    "nvenc": "Functional h264_nvenc and compatible installed driver required. Baseline706ba2a full synthetic acceptance passed; current entry only regression-tested. Encoding algorithm unchanged; opening text and receipt truthfulness corrected, no new full render.",
+    "nvenc": "Current metadata revision: one fresh full 183.2-second synthetic NVENC/music chain, real metadata-driven curation and sanitized derived cover; prior validation snapshot no-music/music evidence is historical. No physical playback or clean install claim.",
     "cpu": "libx264; two-second encode/cover smoke passed, full render untested"
   },
   "font": "external user-provided licensed CJK font; not bundled",
@@ -53,5 +53,38 @@
     "new_dependencies_installed": false
   },
   "optional_recipe": "environment/shell.nix; pinned source details and R1-only execution provenance in environment/sources.json",
-  "doctor_scope": "Tool/font/encoder probe only; does not validate input library, selection, timezone, or unattended automation readiness"
+  "doctor_scope": "Tool/font/encoder probe only; does not validate input library, selection, timezone, or unattended automation readiness",
+  "metadata_revision": {
+    "PC5": {
+      "ordinary_run": 57,
+      "optimized_run": 57,
+      "passed_each": 54,
+      "skipped_each": 3
+    },
+    "PC1": {
+      "ordinary": 57,
+      "optimized": 57,
+      "skipped": 0,
+      "python": "3.13.15",
+      "ExifTool": "13.59"
+    },
+    "optional_exiftool": "Existing ExifTool only; embedded EXIF/GPS verified on JPEG, sidecar fallback without it; no installation",
+    "video_metadata": "MP4 creation_time verified; candidate default, explicit use-offset policy for automated use",
+    "strict_validation": "positive dimensions <=100MP; first image frame / full first video+optional first audio stream; 30 seconds per media; timeout excluded not declared corrupt",
+    "attempt_history": "unique immutable intent/resource for admitted worker attempts; preflight rejections rely on CLI/caller log, day snapshot is latest only",
+    "end_to_end_evidence": "evidence/metadata-revision-acceptance.json",
+    "execution_closure_sha256": "58e866076ab68ec6ee6a19b46f93be80d4b0735d6e168f1abc14b20e74ee94f1"
+  },
+  "previous_caibianbo_validation": {
+    "scope": "local collect-edit-deliver; configured sidecar metadata, deterministic curation, staging, render, optional licensed audio mix, atomic publication and verified local player update",
+    "platform": "Linux/POSIX with /proc, fcntl, process groups; no required hardware model",
+    "ordinary_tests": 47,
+    "optimized_tests": 47,
+    "new_end_to_end": "Historical caibianbo validation snapshot only; version 1.0.0 metadata validation is recorded separately in metadata_revision",
+    "playback": "not tested on a physical device",
+    "additional_python_packages": [],
+    "evidence": "evidence/synthetic-acceptance.json",
+    "heavy_host_regressions_at_dispatch": 46,
+    "final_regressions": 47
+  }
 }

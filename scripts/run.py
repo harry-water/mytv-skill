@@ -85,12 +85,17 @@ def fingerprint(rows,cfg,policy,day,runtime):
  return hashlib.sha256(json.dumps(value,sort_keys=True).encode()).hexdigest()
 def execute(cmd,cwd,log):
  with log.open('x') as f:
-  proc=subprocess.Popen(cmd,cwd=cwd,stdout=f,stderr=subprocess.STDOUT,start_new_session=True)
+  detached=os.environ.get('MYTV_PIPELINE_OWNED')!='1'
+  proc=subprocess.Popen(cmd,cwd=cwd,stdout=f,stderr=subprocess.STDOUT,start_new_session=detached)
   try:rc=proc.wait()
   except KeyboardInterrupt:
-   os.killpg(proc.pid,signal.SIGTERM)
+   if detached:os.killpg(proc.pid,signal.SIGTERM)
+   else:proc.terminate()
    try:proc.wait(timeout=15)
-   except subprocess.TimeoutExpired:os.killpg(proc.pid,signal.SIGKILL);proc.wait()
+   except subprocess.TimeoutExpired:
+    if detached:os.killpg(proc.pid,signal.SIGKILL)
+    else:proc.kill()
+    proc.wait()
    raise
  require(rc==0,'Child failed; inspect isolated log: '+str(log))
 def main():

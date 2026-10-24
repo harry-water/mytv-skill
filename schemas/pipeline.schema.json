@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MyTV collect-edit-deliver configuration",
+  "type": "object",
+  "required": [
+    "schema",
+    "timezone",
+    "library_root",
+    "state_root",
+    "work_root",
+    "publish_root",
+    "font_file"
+  ],
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "library_root": {
+      "type": "string"
+    },
+    "state_root": {
+      "type": "string"
+    },
+    "work_root": {
+      "type": "string"
+    },
+    "publish_root": {
+      "type": "string"
+    },
+    "font_file": {
+      "type": "string"
+    },
+    "encoding_backend": {
+      "enum": [
+        "nvenc",
+        "cpu"
+      ]
+    },
+    "selection": {
+      "type": "object",
+      "properties": {
+        "recent_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 366
+        },
+        "allow_same_month_fallback": {
+          "type": "boolean"
+        },
+        "leap_day_fallback": {
+          "enum": [
+            "none",
+            "feb28"
+          ]
+        },
+        "preferred_locations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferred_people": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "music": {
+      "type": "object",
+      "required": [
+        "file",
+        "license_confirmed"
+      ],
+      "properties": {
+        "file": {
+          "type": "string"
+        },
+        "license_confirmed": {
+          "const": true
+        },
+        "volume": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "timeout_seconds": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 3600
+        },
+        "term_grace_seconds": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "minimum_free_bytes": {
+          "type": "integer"
+        },
+        "maximum_output_bytes": {
+          "type": "integer"
+        },
+        "minimum_memory_bytes": {
+          "type": "integer"
+        },
+        "maximum_rss_bytes": {
+          "type": "integer"
+        },
+        "maximum_load1": {
+          "type": "number"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "video_creation_time_policy": {
+          "enum": [
+            "candidate",
+            "use-offset"
+          ]
+        }
+      }
+    }
+  },
+  "description": "preflight additionally enforces disjoint no-symlink roots, private owned managed dirs, IANA timezone and budget ranges; no external schema validator needed."
+}

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "timezone": "UTC",
+  "library_root": "/absolute/local-library",
+  "state_root": "/absolute/private-state",
+  "work_root": "/absolute/private-work",
+  "publish_root": "/absolute/private-publication",
+  "font_file": "/absolute/licensed-font.otf",
+  "encoding_backend": "nvenc",
+  "selection": {
+    "recent_days": 7,
+    "allow_same_month_fallback": true,
+    "leap_day_fallback": "none",
+    "preferred_locations": [],
+    "preferred_people": []
+  },
+  "limits": {
+    "timeout_seconds": 900,
+    "term_grace_seconds": 20,
+    "minimum_free_bytes": 5368709120,
+    "maximum_output_bytes": 3221225472,
+    "minimum_memory_bytes": 3221225472,
+    "maximum_rss_bytes": 4294967296,
+    "maximum_load1": 8
+  },
+  "metadata": {
+    "video_creation_time_policy": "candidate"
+  }
+}

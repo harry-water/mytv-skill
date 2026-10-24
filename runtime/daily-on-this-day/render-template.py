@@ -53,7 +53,7 @@ def photo(r):
     out = W / 'assets' / f'{key}.jpg'
     if not out.exists():
         caption = r['caption']
-        run(['magick', str(p) + '[0]', '-auto-orient', '-colorspace', 'sRGB', '-write', 'mpr:src', '+delete', '(', 'mpr:src', '-resize', '1920x1080^', '-gravity', 'center', '-extent', '1920x1080', '-blur', '0x28', '-brightness-contrast', '-18x-8', ')', '(', 'mpr:src', '-resize', '1780x930', ')', '-gravity', 'center', '-geometry', '+0-22', '-compose', 'over', '-composite', '-fill', '#111923B0', '-draw', 'rectangle 0,996 1920,1080', '-font', FONT, '-pointsize', str(SIZES['caption']), '-fill', '#F4F0E8', '-gravity', 'southwest', '-annotate', '+62+20', caption, '-gravity', 'southeast', '-fill', '#D3BB91', '-pointsize', str(SIZES['category']), '-annotate', '+62+22', r['category'], '-quality', '93', out], f'canvas-{key}')
+        run(['magick', str(p) + '[0]', '-auto-orient', '-colorspace', 'sRGB', '-write', 'mpr:src', '+delete', '(', 'mpr:src', '-resize', '1920x1080^', '-gravity', 'center', '-extent', '1920x1080', '-blur', '0x28', '-brightness-contrast', '-18x-8', ')', '(', 'mpr:src', '-resize', '1780x930', ')', '-gravity', 'center', '-geometry', '+0-22', '-compose', 'over', '-composite', '-fill', '#111923B0', '-draw', 'rectangle 0,996 1920,1080', '-font', FONT, '-pointsize', str(SIZES['caption']), '-fill', '#F4F0E8', '-gravity', 'southwest', '-annotate', '+62+20', caption, '-gravity', 'southeast', '-fill', '#D3BB91', '-pointsize', str(SIZES['category']), '-annotate', '+62+22', r['category'], '-strip', '-quality', '93', out], f'canvas-{key}')
         size = subprocess.check_output(['magick', 'identify', '-format', '%w %h', str(out)], text=True)
         if not size == '1920 1080':
             raise ValueError(size)

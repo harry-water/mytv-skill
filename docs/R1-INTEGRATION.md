@@ -1,4 +1,6 @@
-# R1选择性整合与证据边界
+# 历史R1选择性整合与证据边界
+
+本页仅记录旧R1选择性整合阶段；1.0.0采—编—播的新流程结果请看README及evidence/metadata-revision-acceptance.json，不用本页旧状态代替当前验收。
 
 基线为已发布706ba2a898abe5847b5e649f3ff95e7e0f920079。仅移植视频选段前置检查、显式回执schema，并加入可选Nix依赖配方；不整体替换R1入口/runtime，不改变现版输出保护、显式校验、严格-xerror或CPU实验分支。
 

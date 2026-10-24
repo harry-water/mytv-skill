@@ -1,16 +1,18 @@
 ---
 name: mytv-family-tv
-description: Generate a local three-to-five-minute memory film and JPEG cover from an upstream-prepared local selection; test with synthetic inputs. Does not control televisions or schedule playback.
+description: Configure and operate MyTV's local collect-edit-deliver workflow to automatically curate a daily memory programme, render and verify it, and safely update a playback directory. Use existing local media and confirmed metadata; no cloud login or device control.
 ---
 
 # MyTV：我的家庭电视台
 
-本版本仅本地制片与封面。先读README.md的依赖、配置、测试状态及限制。MyTV目标是本地内容库的每日自动回忆视频；本公开包尚未包含同步、索引、地点/人物选片或排程。用scripts/run.py doctor/render处理上游生成的选片表（可自动生成），输出到输入树之外的新私密目录，至少包含一张照片。
+一个节目编导Skill，统一“采—编—播”。按需读[三章总手册](README.md)。使用scripts/pipeline.py确定性程序，不依赖永久模型会话。采从本地已有素材开始，不含拍摄/云账号下载；编配置日期、回退和确认标签偏好并解释计划；播只校验获取与切换，不冒称实际播放。
 
-保留原件；不用mtime猜拍摄日期，不虚构人物或行程关系。字体和输出路径须通过滤镜特殊字符校验。部分输出不自动清理或覆盖。回执schema版本不符时保留旧输出，使用新输出根；不迁移或回填历史记录。可选Nix配方仅在本次静态审查，使用边界见docs/R1-INTEGRATION.md。
+配置本地库及互不包含的状态/工作/发布/播放根、合法外部字体。原件不改不删，未知日期不以mtime补齐；支持[侧车schema](schemas/sidecar.schema.json)、[完整配置](examples/pipeline.json)。嵌入照片EXIF/GPS仅在已有ExifTool时可读，实测JPEG；无偏移时间保持unknown，容器时间默认候选，显式政策才用于选材。严格解码超时的媒体不自动入选，不直接称损坏。只用已有确认人物标签，不识别人脸或上传家庭素材。
 
-基线706ba2a已有严格解码完整NVENC合成验收；选择性整合入口此前普通与-O各22项回归通过，当前隐私与真实性修正各24项回归通过，没有全长复验。CPU仅短小样，不代表完整CPU制片通过。分别报告制片、封面、实际播放、屏幕/声音、排程与通知，不把未测项目标通过。
+先preflight、index、plan，再run；素材不足明确失败保留上一期。普通版把用户有权使用的音乐合入MP4；米家立体声只有进阶说明，不控制设备。每日调度调用同一run命令，由用户部署，不擅自创建服务。
 
-不处理未审恶意媒体或共享/敌对输出目录。不安装依赖、控制设备、上传云端、创建服务或改排程。许可范围见LICENSE-SCOPE.md与PROVENANCE.json；原创MIT授权不扩张第三方权利。
+原始EXIF/GPS留在私密索引；pipeline派生画布先校正方向/合成sRGB后剥离元数据，实际发布/获取封面须检查，不把任意独立cover-source当作已脱敏。
 
-公开入口仅输出日期字幕，不读取location/people；地点字幕回执应为false。doctor仅检查依赖能力，不能当作素材/时区/选片或自动化就绪验收。
+中断先核同日journal/产物，按原意图有界恢复，不换ID盲目重放、不删锁或旧片。doctor不是完整就绪。分别报告索引、计划、制片质检、发布、客户端验证、实际播放；确认实际播放后才记played。源码变更不能复用旧验收，mock不能算真实影片。
+
+本地计划/索引/日志含私人路径/标签，不公开。公开证据只用合成素材和通用能力条件，不夹带个人邮箱、设备/IP或家庭路径。安装、云凭据、网络服务、生产排程/电视修改仍需对应授权。

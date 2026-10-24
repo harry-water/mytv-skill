@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "scope": "final metadata revision; all media synthesized, no household data",
+  "executable_closure_sha256": "58e866076ab68ec6ee6a19b46f93be80d4b0735d6e168f1abc14b20e74ee94f1",
+  "software": {
+    "python_full": "3.13.15",
+    "ExifTool": "13.59",
+    "ffmpeg": "9.0.1",
+    "ImageMagick": "7.1.2-29"
+  },
+  "regressions": {
+    "PC1_ordinary": 57,
+    "PC1_optimized": 57,
+    "PC5_passed_each": 54,
+    "PC5_skipped_each": 3,
+    "original_24_preserved": true
+  },
+  "real_media_tests": [
+    "JPEG EXIF original+offset and hemisphere-correct GPS",
+    "sidecar time/GPS conflict priority",
+    "offsetless photo remains unknown",
+    "MP4 container offset-time opt-in policy",
+    "actual malformed JPEG and truncated MP4 rejected",
+    "derived canvas source EXIF/GPS removed"
+  ],
+  "fresh_full_chain": {
+    "seconds": 183.2,
+    "bytes": 39158604,
+    "sha256": "ce2802f176ef4b5a31b3a7cd9bf419f38c97a5ba3a6c53363b92a03d2414f12e",
+    "music": "synthetic sine",
+    "selection_count": 22,
+    "static_photos_checked": 19,
+    "embedded_EXIF_and_explicit_container_policy_selected": true,
+    "actual_bad_media_excluded_count": 2,
+    "source_sha_unchanged": true,
+    "strict_full_decode": true,
+    "published_and_client_verified": true,
+    "cover_source_GPS_and_capture_time_absent": true,
+    "cover_sha256": "03c29adddafcd00706adfd835e3364e6263c33897f30e2c8b81ee65fa63879a4",
+    "first_attempt_seconds": 220.901,
+    "repeat_attempt_seconds": 1.086,
+    "first_attempt_retained": true,
+    "new_render_performed": true
+  },
+  "bounds": {
+    "whole_suite_with_monitor_seconds": 257.258,
+    "total_timeout_seconds": 900,
+    "no_stop_triggered": true
+  },
+  "limitations": [
+    "EXIF/GPS actual test JPEG only",
+    "container metadata actual test MP4 only",
+    "no offset stays unknown; digitization date not capture fact",
+    "100MP and 30s decode admission limits; timeout is not proof of corruption",
+    "standalone arbitrary cover-source is not a sanitizer",
+    "admitted worker attempts retained; preflight rejections use caller log",
+    "no physical playback, clean install, long-term reliability or all-format claim"
+  ],
+  "old_artifacts_unchanged": true,
+  "network_used_by_test": false
+}

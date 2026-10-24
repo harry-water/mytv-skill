@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "scope": "Historical previous caibianbo candidate only; does not validate new metadata revision",
+  "ordinary_regressions": 47,
+  "optimized_regressions": 47,
+  "heavy_host_regressions_at_dispatch": 46,
+  "execution_source_matches_heavy_candidate": true,
+  "variants": [
+    {
+      "music_embedded": false,
+      "seconds": 183.2,
+      "bytes": 36510981,
+      "sha256": "897876f4fec2dbb33d8486bc4fc3e63233b473488d27966a5e9bb78262e917bf",
+      "selection_count": 22,
+      "static_photos_checked": 19,
+      "strict_independent_full_decode": true,
+      "video": "1920x1080 H264 yuv420p limited BT.709",
+      "audio": "AAC",
+      "published_and_client_verified": true,
+      "synthetic_video_selected": true
+    },
+    {
+      "music_embedded": true,
+      "seconds": 183.2,
+      "bytes": 38803229,
+      "sha256": "51e36e4503b4428bad2336afe098df2af96e8d7150cdc7b1bf921bacc40ce644",
+      "selection_count": 22,
+      "static_photos_checked": 19,
+      "strict_independent_full_decode": true,
+      "video": "1920x1080 H264 yuv420p limited BT.709",
+      "audio": "AAC",
+      "published_and_client_verified": true,
+      "synthetic_video_selected": true
+    }
+  ],
+  "source_sha_unchanged": true,
+  "idempotent_repeat": true,
+  "corrupt_or_missing_B_retains_A": true,
+  "bad_music_preserves_publisher": true,
+  "generation_not_marked_played": true,
+  "within_900_second_tree_budget": true,
+  "physical_playback": false,
+  "clean_install": false,
+  "long_term_unattended_test": false,
+  "no_network_used_by_test": true,
+  "first_attempt": "font path preflight rejected before rendering; fixed read-only font resolution and preserved failure receipt",
+  "orientation_component": {
+    "scope": "actual current segment function extracted verbatim; not a full programme rerender",
+    "input_rotation_degrees": [
+      90
+    ],
+    "output": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "format": {
+        "duration": "9.000000"
+      }
+    },
+    "segment_bytes": 9596221,
+    "segment_sha256": "b04b1982a198a79c864f1a2df0f1c134211f9dc9302b5e29a82b9c91ffdd998d",
+    "input_unchanged": true,
+    "strict_decode": true
+  },
+  "portrait_photos_selected": 4,
+  "music_video_stream_copy_verified": true,
+  "no_remaining_test_processes_after_suite": true
+}
