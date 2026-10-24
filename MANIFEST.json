@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "scope": "local film and cover only",
+  "files": {
+    ".gitignore": {
+      "bytes": 68,
+      "sha256": "7e5a099c8051fcc2475195962e12439667ff4efc8d5e59e9695bc69d43e64afa"
+    },
+    "DEPENDENCIES.json": {
+      "bytes": 1621,
+      "sha256": "c0c7242b2c5d1afcffdddd7168077b937fbe8c2f301131f960ac657f58b5dc44"
+    },
+    "LICENSE-MIT.txt": {
+      "bytes": 1141,
+      "sha256": "73d01fefe46d083be1c01964049ae98424cd7e610cccf999bca27fa5cbf1c530"
+    },
+    "LICENSE-SCOPE.md": {
+      "bytes": 900,
+      "sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
+    },
+    "PROVENANCE.json": {
+      "bytes": 7553,
+      "sha256": "c0572b88a137ba5d9533c22a71cb0c173c55a8803b3b4f51619faf7839780d3a"
+    },
+    "README.md": {
+      "bytes": 7012,
+      "sha256": "1c0f8d3e6aa446336fc2991bc68af7800adb893199677082e498a797dc685a75"
+    },
+    "SKILL.md": {
+      "bytes": 1141,
+      "sha256": "053249a22af9d126877f7e1a47b5137bc8d1612f2f466c204cec3bdd0ff52c9f"
+    },
+    "VERSION": {
+      "bytes": 6,
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+    },
+    "config/duration.json": {
+      "bytes": 227,
+      "sha256": "7340498e6c31c3c077bd891fc6469eab8788b7b740eeea9fd2193b4b5f2d9063"
+    },
+    "config/local.template.json": {
+      "bytes": 172,
+      "sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422"
+    },
+    "runtime/daily-on-this-day/duration_plan.py": {
+      "bytes": 2373,
+      "sha256": "8f7e86e2fce8757f9d7854dab72ed065e3c0a393003758a1676ea92c92907549"
+    },
+    "runtime/daily-on-this-day/encoding.py": {
+      "bytes": 500,
+      "sha256": "b6845264c4e14fc9191c4b8ac56031aaaa81468e54176f0bd474d99ae89e5bd5"
+    },
+    "runtime/daily-on-this-day/render-template.py": {
+      "bytes": 15850,
+      "sha256": "5236614ebcb4760f3e51b2eebaa37a104689c82523c2aecde7eb6f1642aef43c"
+    },
+    "runtime/daily-on-this-day/static-photo-check.py": {
+      "bytes": 3748,
+      "sha256": "33c526fb788131afd88090c6059a018ff103194396e58b4e912cae9070d0b496"
+    },
+    "runtime/daily-on-this-day/video_clip.py": {
+      "bytes": 1617,
+      "sha256": "31f601ab3256a06471ccb7570e9b4a1041afd7f46aaf7e48cd5c210d2e2dbfda"
+    },
+    "runtime/prepare_video_presentation.py": {
+      "bytes": 4307,
+      "sha256": "ddba9943588ebca308d75dcf958b7004116dc09e6fa4689a9c5ef46fc91bd30e"
+    },
+    "runtime/video-presentation-policy.json": {
+      "bytes": 205,
+      "sha256": "6680e3ba4169c5fb852f067283cfa2ea608f7fe76f167bcd73692b287b3b1173"
+    },
+    "scripts/make_synthetic.py": {
+      "bytes": 1987,
+      "sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7"
+    },
+    "scripts/run.py": {
+      "bytes": 9909,
+      "sha256": "4eb8fafb13163c3d71cbba43739a859817a2e8cf0285825321bd4069d1206091"
+    },
+    "tests/smoke_cpu.py": {
+      "bytes": 2991,
+      "sha256": "d304dbe569f8b4f12990c96ee8356f12ce7a3aa765708fb99c12bdc47e9e441d"
+    },
+    "tests/test_decode.py": {
+      "bytes": 2300,
+      "sha256": "1e2e96c17a184e12bb4ccf22ac30b6c6f85ce43a5ff142732b13a0078acbc62b"
+    },
+    "tests/test_local.py": {
+      "bytes": 7345,
+      "sha256": "9cdb1eefe084b5e6c426e9567684f70e80ace3493885f1629be19d3699459597"
+    }
+  }
+}

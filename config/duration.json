@@ -1,0 +1,15 @@
+{
+  "target_duration_seconds": [
+    180,
+    300
+  ],
+  "transition_seconds": 0.7,
+  "timing": {
+    "preferred_duration_seconds": 240,
+    "photo_seconds_range": [
+      6.5,
+      8.5
+    ],
+    "video_clip_seconds": 9
+  }
+}

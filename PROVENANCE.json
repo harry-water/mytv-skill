@@ -1,0 +1,146 @@
+{
+  "owner": "Harry Water",
+  "version": "1.0.0",
+  "policy": "MIT for project-original material owned by Harry Water, explicitly authorized by owner; retain any actual third-party terms. Excluded screensaver/player/production integration. No full copyright audit claimed.",
+  "public_origin_evidence": "Delivery declares project/AI-assisted authorship; owner authorized MIT. Snapshot hashes identify supplied baselines; absence of Git history is not treated as a legal bar.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "7e5a099c8051fcc2475195962e12439667ff4efc8d5e59e9695bc69d43e64afa"
+    },
+    {
+      "path": "DEPENDENCIES.json",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "c0c7242b2c5d1afcffdddd7168077b937fbe8c2f301131f960ac657f58b5dc44"
+    },
+    {
+      "path": "LICENSE-MIT.txt",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "73d01fefe46d083be1c01964049ae98424cd7e610cccf999bca27fa5cbf1c530"
+    },
+    {
+      "path": "LICENSE-SCOPE.md",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
+    },
+    {
+      "path": "README.md",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "1c0f8d3e6aa446336fc2991bc68af7800adb893199677082e498a797dc685a75"
+    },
+    {
+      "path": "SKILL.md",
+      "baseline_sha256": "4a72e32cd496b590b92cf8fbdacc62bc7989ad0b010a36d7bd9bee9107f6db4e",
+      "current_sha256": "053249a22af9d126877f7e1a47b5137bc8d1612f2f466c204cec3bdd0ff52c9f",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "rewritten original revision; MIT"
+    },
+    {
+      "path": "VERSION",
+      "baseline_sha256": "336ac340ab21a99bda856210a49d51f910f5eeb3db334194e5c7cea7762fd258",
+      "current_sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "rewritten original revision; MIT"
+    },
+    {
+      "path": "config/duration.json",
+      "baseline_sha256": "7340498e6c31c3c077bd891fc6469eab8788b7b740eeea9fd2193b4b5f2d9063",
+      "current_sha256": "7340498e6c31c3c077bd891fc6469eab8788b7b740eeea9fd2193b4b5f2d9063",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "inherited project-original configuration; unchanged from supplied baseline; owner-authorized MIT"
+    },
+    {
+      "path": "config/local.template.json",
+      "baseline_sha256": "8a6f80201c63e2e762ec8fd5fd9ed3b07eb33e595f59a5e7acefc539de3a8787",
+      "current_sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "rewritten original revision; MIT"
+    },
+    {
+      "path": "runtime/daily-on-this-day/duration_plan.py",
+      "baseline_sha256": "66fe3f3573cb9a9db69b947f70bef58042e63ff606802568862bfaf314a62f18",
+      "current_sha256": "8f7e86e2fce8757f9d7854dab72ed065e3c0a393003758a1676ea92c92907549",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "runtime/daily-on-this-day/encoding.py",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "b6845264c4e14fc9191c4b8ac56031aaaa81468e54176f0bd474d99ae89e5bd5"
+    },
+    {
+      "path": "runtime/daily-on-this-day/render-template.py",
+      "baseline_sha256": "aa7bfe9502a371f9b8545d0fb5d034cdced758bc8cc444daeadb0597c1f90ef9",
+      "current_sha256": "5236614ebcb4760f3e51b2eebaa37a104689c82523c2aecde7eb6f1642aef43c",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "runtime/daily-on-this-day/static-photo-check.py",
+      "baseline_sha256": "74d29714077e31e9a100f155540cd9e45d488b1acc78f0ed58a7f3b4da30adbb",
+      "current_sha256": "33c526fb788131afd88090c6059a018ff103194396e58b4e912cae9070d0b496",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "runtime/daily-on-this-day/video_clip.py",
+      "baseline_sha256": "a1900c4b29d21b8a5dd875a2317f52ac53e296e45ca32e48174c63062a7995dd",
+      "current_sha256": "31f601ab3256a06471ccb7570e9b4a1041afd7f46aaf7e48cd5c210d2e2dbfda",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "runtime/prepare_video_presentation.py",
+      "baseline_sha256": "cb603e05aca2673bbfa664d13c998779adf19911f8d558cac80d8d743ee6570d",
+      "current_sha256": "ddba9943588ebca308d75dcf958b7004116dc09e6fa4689a9c5ef46fc91bd30e",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "runtime/video-presentation-policy.json",
+      "baseline_sha256": "4f52c7006028eb7397b629ddf8edef75cd205a559d17cdbb82557c417031d637",
+      "current_sha256": "6680e3ba4169c5fb852f067283cfa2ea608f7fe76f167bcd73692b287b3b1173",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "scripts/make_synthetic.py",
+      "baseline_sha256": "6b2ec2d5fd65f7f2b1019127102794f991f4edcec98a9e124989235b7061b188",
+      "current_sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
+    },
+    {
+      "path": "scripts/run.py",
+      "baseline_sha256": "f961838445beea7deabd8ca852af38fa3c1d252c3f9f32008855f86a319b69f5",
+      "current_sha256": "4eb8fafb13163c3d71cbba43739a859817a2e8cf0285825321bd4069d1206091",
+      "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
+      "status": "rewritten original revision; MIT"
+    },
+    {
+      "path": "tests/smoke_cpu.py",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "d304dbe569f8b4f12990c96ee8356f12ce7a3aa765708fb99c12bdc47e9e441d"
+    },
+    {
+      "path": "tests/test_decode.py",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "1e2e96c17a184e12bb4ccf22ac30b6c6f85ce43a5ff142732b13a0078acbc62b"
+    },
+    {
+      "path": "tests/test_local.py",
+      "origin": "new original revision",
+      "status": "MIT",
+      "current_sha256": "9cdb1eefe084b5e6c426e9567684f70e80ace3493885f1629be19d3699459597"
+    }
+  ]
+}

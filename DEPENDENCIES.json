@@ -1,0 +1,48 @@
+{
+  "python": "3.11+ theoretical API requirement, not compatibility-tested; regression observed 3.13.5 and full-render environment 3.13.15",
+  "platform": "Linux/POSIX; fcntl and process groups required",
+  "external_tools": [
+    "ffmpeg",
+    "ffprobe",
+    "ImageMagick7 magick"
+  ],
+  "required_filters": [
+    "zscale",
+    "drawtext",
+    "xfade",
+    "acrossfade",
+    "ssim"
+  ],
+  "encoder_backend": {
+    "nvenc": "h264_nvenc; final 28-photo/4-video 240.233333-second full synthetic pipeline and strict -xerror decode passed once",
+    "cpu": "libx264; two-second encode/cover smoke passed, full render untested"
+  },
+  "font": "external user-provided licensed CJK font; not bundled",
+  "pip_dependencies": [],
+  "lockfile": "Exact installed versions/paths recorded privately; no clean-install reproducible build recipe verified",
+  "current_review_host": "Python3.13.5 / FFmpeg7.1.5; no magick, no NVENC execution test",
+  "tested_full_environment": {
+    "python": "3.13.15",
+    "ffmpeg": "9.0.1",
+    "ffprobe": "9.0.1",
+    "magick": "7.1.2-29 Q16-HDRI",
+    "gpu": "NVIDIA GeForce RTX2060",
+    "driver": "595.71.05",
+    "font_sha256": "d3d8256cdec8dbcb3552284bc6b20c734dd60c2ee9df83b5758e34807c4bac32"
+  },
+  "verified_regression_versions": [
+    "3.13.5",
+    "3.13.15"
+  ],
+  "unverified_compatibility": "Python3.11+ is theoretical, not tested across versions",
+  "full_acceptance": {
+    "photos": 28,
+    "videos": 4,
+    "seconds": 240.233333,
+    "worker_seconds": 281.872,
+    "strict_decode": true,
+    "ordinary_unit_tests": 18,
+    "optimized_unit_tests": 18,
+    "player_tested": false
+  }
+}
