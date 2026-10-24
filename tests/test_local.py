@@ -62,7 +62,7 @@ class LocalTests(unittest.TestCase):
   argv=['run.py','render','--config',str(config),'--selection',str(selection),'--date',self.day.isoformat()]
   before={p:p.read_bytes() for p in self.inputs.iterdir()}
   with patch.object(sys,'argv',argv),patch.object(m,'doctor',side_effect=lambda font,backend:{'font_sha256':m.sha(font),'backend':backend}),patch.object(m.subprocess,'run'),patch.object(m,'execute',side_effect=execute):
-   m.main();film=out/self.day.isoformat()/'daily-render.mp4';first=film.stat().st_mtime_ns;m.main();self.assertEqual(len(calls),2);self.assertEqual(film.stat().st_mtime_ns,first)
+   m.main();context=json.loads((out/self.day.isoformat()/'context.json').read_text());self.assertIn('本地回忆影片',context['opening_sub']);self.assertNotIn('人工',context['opening_sub']);film=out/self.day.isoformat()/'daily-render.mp4';first=film.stat().st_mtime_ns;m.main();self.assertEqual(len(calls),2);self.assertEqual(film.stat().st_mtime_ns,first)
    done=out/self.day.isoformat()/'adapter-receipt.json';original_receipt=done.read_bytes();legacy=json.loads(original_receipt);legacy.pop('receipt_schema_version');done.write_text(json.dumps(legacy));legacy_bytes=done.read_bytes()
    with self.assertRaisesRegex(ValueError,'schema'):m.main()
    self.assertEqual(done.read_bytes(),legacy_bytes);self.assertEqual(film.stat().st_mtime_ns,first);self.assertEqual(len(calls),2);done.write_bytes(original_receipt)
@@ -107,6 +107,15 @@ class LocalTests(unittest.TestCase):
  def test_optimized_mode_still_rejects(self):
   code="import importlib.util; s=importlib.util.spec_from_file_location('x',"+repr(str(ROOT/'scripts/run.py'))+");m=importlib.util.module_from_spec(s);s.loader.exec_module(m);m.require(False,'rejected')"
   r=subprocess.run([sys.executable,'-O','-c',code],capture_output=True,text=True,timeout=5);self.assertNotEqual(r.returncode,0);self.assertIn('ValueError: rejected',r.stderr)
+ def test_receipt_does_not_claim_location_captions(self):
+  tree=ast.parse((ROOT/'runtime/daily-on-this-day/render-template.py').read_text())
+  receipt=next(n.value for n in ast.walk(tree) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='receipt' for t in n.targets))
+  fields={k.value:v for k,v in zip(receipt.keys,receipt.values) if isinstance(k,ast.Constant)}
+  self.assertIs(ast.literal_eval(fields['location_captions']),False)
+ def test_upstream_fields_do_not_claim_person_or_location_support(self):
+  rows=self.rows(1);rows[0].update(location='synthetic place',people=['synthetic person'])
+  with patch.object(m.subprocess,'run'):selected=m.selection(rows,self.inputs,self.day)
+  self.assertNotIn('location',selected[0]);self.assertNotIn('people',selected[0]);self.assertEqual(selected[0]['caption'],'2029.10.24')
  def test_no_assert_in_published_sources(self):
   for p in ROOT.rglob('*.py'):
    if 'tests' not in p.parts:self.assertFalse(any(isinstance(n,ast.Assert) for n in ast.walk(ast.parse(p.read_text()))),str(p))

@@ -14,7 +14,7 @@
       "path": "DEPENDENCIES.json",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "21f4c0356d774e3dfc60c2ea4a98dfe10144ecba0614674ee948dbe36dd8bdf6"
+      "current_sha256": "89559e3832edfa941182125219759e684da66c58da4a06314ed5c50658cc384e"
     },
     {
       "path": "LICENSE",
@@ -38,12 +38,12 @@
       "path": "README.md",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "7c8236215209f7464f2290aa1f049bbcd194ec7ff6bee831557d4c4a19002ce3"
+      "current_sha256": "24df64cbc98715859ea47b443f57172e59eb90d509e0a832c154e586bd4c09d5"
     },
     {
       "path": "SKILL.md",
       "baseline_sha256": "4a72e32cd496b590b92cf8fbdacc62bc7989ad0b010a36d7bd9bee9107f6db4e",
-      "current_sha256": "258b5c5867fe2d16f369d0384cde32205be5a0f9fbe6d213b96bc117947b0b2b",
+      "current_sha256": "d7bd19ffe36d89a7b9190b1e095f254575978cb66a075890d0440947647cb757",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -72,7 +72,7 @@
       "path": "docs/R1-INTEGRATION.md",
       "origin": "new project-original selective integration",
       "status": "MIT",
-      "current_sha256": "fe585495f28baeb0bf5bf82a2512294a693cc540c258aad76802d3866369b5c1"
+      "current_sha256": "61e71e2ee4354980d2b51a2f5d09fe46f3ac41661efebd3f5bc5b16d9e4952d0"
     },
     {
       "path": "environment/NIXPKGS-NOTICE.txt",
@@ -90,7 +90,7 @@
       "path": "environment/sources.json",
       "origin": "R1 pinned Nix recipe/source metadata selectively adapted; tools-source COPYING checked read-only",
       "status": "Project-original template MIT; upstream Nixpkgs terms retained in NIXPKGS-NOTICE.txt; not applied to third-party binaries",
-      "current_sha256": "c426ad740d28cb1ec830a7ae18aae0ea0681702ade046cbbdb62eacf87f9cf8a"
+      "current_sha256": "eb6acc1b0df335cd0db25b6bc955186a02fce6ac62354564c5e97818e1906362"
     },
     {
       "path": "runtime/daily-on-this-day/duration_plan.py",
@@ -108,7 +108,7 @@
     {
       "path": "runtime/daily-on-this-day/render-template.py",
       "baseline_sha256": "aa7bfe9502a371f9b8545d0fb5d034cdced758bc8cc444daeadb0597c1f90ef9",
-      "current_sha256": "5236614ebcb4760f3e51b2eebaa37a104689c82523c2aecde7eb6f1642aef43c",
+      "current_sha256": "2dc5423141aa7ee269943cd24a0c9a4e21e57631987d7471785362471d7680b6",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "adapted project-original per delivery declaration; owner-authorized MIT; no full copyright audit claimed"
     },
@@ -150,7 +150,7 @@
     {
       "path": "scripts/run.py",
       "baseline_sha256": "f961838445beea7deabd8ca852af38fa3c1d252c3f9f32008855f86a319b69f5",
-      "current_sha256": "0eceb0e061703d64328e918ea20793b9d53879d0bf959d8830df276638f3df81",
+      "current_sha256": "48cd6baa2e721c08c0ae117711c80d558874034122101022fcb820a538bb8184",
       "origin": "owner-supplied project snapshot; project/AI-assisted authorship declared",
       "status": "rewritten original revision; MIT"
     },
@@ -170,14 +170,17 @@
       "path": "tests/test_local.py",
       "origin": "new original revision",
       "status": "MIT",
-      "current_sha256": "10f1da6dfffbbb37e9b21f0d689816bfdba77c0e96ea565f99fc54ccb26708e6"
+      "current_sha256": "c09451e114706e2c1c3cda876830a8351fbbab777f3ba2457df5ea049ba2aa7b"
     }
   ],
   "selective_R1_integration": {
     "base_commit": "706ba2a898abe5847b5e649f3ff95e7e0f920079",
-    "private_R1_zip_sha256": "150fb1dc3dd758a38b05ecbb22c6937cbb00383fcf5a66b5602b96af6d2d94e0",
     "scope": "Only early clip validation, explicit receipt schema and optional pinned dependency documentation; no renderer replacement",
     "ownership": "Project-original material owned by Harry Water remains MIT; Nixpkgs notice retained; font not distributed",
     "validation": "Merged-entry ordinary/-O regression only; R1 pure shell evidence not rerun here; baseline full-render evidence not relabelled"
+  },
+  "privacy_truthfulness_revision": {
+    "scope": "Remove individual device/driver and private evidence fingerprints; distinguish product automation goal from public rendering component; report date-only captions truthfully",
+    "validation": "ordinary and optimized 24 regressions; no full render, Nix environment, or physical playback rerun"
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local reviewed-media renderer. No network, scheduler, or device control."""
+"""Local upstream-selection renderer. No network, scheduler, or device control."""
 from pathlib import Path
 import argparse, datetime as dt, hashlib, json, os, shutil, subprocess, sys, signal, time, fcntl, stat, math
 from zoneinfo import ZoneInfo
@@ -115,7 +115,7 @@ def main():
    print(json.dumps({'status':'idempotent_reuse','film_sha256':j['film_sha256']}));return
   require(set(p.name for p in output.iterdir())=={'adapter.lock'},'Partial/existing output preserved; use a new output_root')
   write(output/'selection.json',rows);style={'version':'mytv-v1.0.0-neutral','font_bold':str(font),'font_sha256':sha(font),'font_weight':700,'font_sizes':{'title':112,'subtitle':48,'caption':42,'category':36,'ai_label':26},'themes_by_month':{}}
-  write(output/'context.json',{'month':day.month,'day':day.day,'date':day.isoformat(),'opening_sub':f'{day.month}月{day.day}日 · 日期经人工确认','same_day_title':f'那些年的{day.month}月{day.day}日','duration_policy':policy,'presentation':style,'encoding_backend':backend})
+  write(output/'context.json',{'month':day.month,'day':day.day,'date':day.isoformat(),'opening_sub':f'{day.month}月{day.day}日 · 本地回忆影片','same_day_title':f'那些年的{day.month}月{day.day}日','duration_policy':policy,'presentation':style,'encoding_backend':backend})
   shutil.copy2(ROOT/'runtime/daily-on-this-day/render-template.py',output/'render.py');os.environ['MYTV_RUNTIME_ROOT']=str(ROOT/'runtime');begin=time.monotonic();execute([sys.executable,str(output/'render.py')],output,output/'adapter-render.log')
   rr=json.loads((output/'render-receipt.json').read_text());prepared=json.loads((output/'prepared-final-selection.json').read_text());cover=next(x['asset'] for x in prepared if x['kind']=='photo')
   execute([sys.executable,str(ROOT/'runtime/prepare_video_presentation.py'),'--video',str(output/'daily-render.mp4'),'--title','历史上的今天 · '+day.isoformat(),'--cover-source',cover,'--expected-video-sha256',rr['sha256']],output,output/'adapter-cover.log')

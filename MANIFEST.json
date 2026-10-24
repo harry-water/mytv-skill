@@ -1,15 +1,15 @@
 {
   "version": "1.0.0",
-  "scope": "local film and cover only; selective R1 integration not yet published",
-  "base_commit": "706ba2a898abe5847b5e649f3ff95e7e0f920079",
+  "scope": "local film and cover component; automation goal not fully implemented; privacy and truthful receipt revision",
+  "base_commit": "da33343b4056f7ce94619cfb8f9a992c224554d2",
   "files": {
     ".gitignore": {
       "bytes": 68,
       "sha256": "7e5a099c8051fcc2475195962e12439667ff4efc8d5e59e9695bc69d43e64afa"
     },
     "DEPENDENCIES.json": {
-      "bytes": 2082,
-      "sha256": "21f4c0356d774e3dfc60c2ea4a98dfe10144ecba0614674ee948dbe36dd8bdf6"
+      "bytes": 2359,
+      "sha256": "89559e3832edfa941182125219759e684da66c58da4a06314ed5c50658cc384e"
     },
     "LICENSE": {
       "bytes": 1068,
@@ -24,16 +24,16 @@
       "sha256": "b3504c40527d68b92db2998b5f79a448ffa9719dd1da9bf6f7f16315ee7ed17a"
     },
     "PROVENANCE.json": {
-      "bytes": 9861,
-      "sha256": "23bb61b19697f02e7a22e19bc2b043a3913a37c7251958bbe40a0d17451549ac"
+      "bytes": 10114,
+      "sha256": "50c3dbd4c08d69f48ad8c67cbce1f84247218d0f4df5fc27ed09b1f42a3c8424"
     },
     "README.md": {
-      "bytes": 7774,
-      "sha256": "7c8236215209f7464f2290aa1f049bbcd194ec7ff6bee831557d4c4a19002ce3"
+      "bytes": 9364,
+      "sha256": "24df64cbc98715859ea47b443f57172e59eb90d509e0a832c154e586bd4c09d5"
     },
     "SKILL.md": {
-      "bytes": 1377,
-      "sha256": "258b5c5867fe2d16f369d0384cde32205be5a0f9fbe6d213b96bc117947b0b2b"
+      "bytes": 1772,
+      "sha256": "d7bd19ffe36d89a7b9190b1e095f254575978cb66a075890d0440947647cb757"
     },
     "VERSION": {
       "bytes": 6,
@@ -48,8 +48,8 @@
       "sha256": "d9ccf3ee31e28bc84a4bcf468ea3df2d7e164518c01bceebfbe0ed0fdd705422"
     },
     "docs/R1-INTEGRATION.md": {
-      "bytes": 2924,
-      "sha256": "fe585495f28baeb0bf5bf82a2512294a693cc540c258aad76802d3866369b5c1"
+      "bytes": 2990,
+      "sha256": "61e71e2ee4354980d2b51a2f5d09fe46f3ac41661efebd3f5bc5b16d9e4952d0"
     },
     "environment/NIXPKGS-NOTICE.txt": {
       "bytes": 1335,
@@ -60,8 +60,8 @@
       "sha256": "2fcfa5e76c18beafe5607693f8952ea2684e711067d8fe2f4e9ce662e482a272"
     },
     "environment/sources.json": {
-      "bytes": 2000,
-      "sha256": "c426ad740d28cb1ec830a7ae18aae0ea0681702ade046cbbdb62eacf87f9cf8a"
+      "bytes": 1909,
+      "sha256": "eb6acc1b0df335cd0db25b6bc955186a02fce6ac62354564c5e97818e1906362"
     },
     "runtime/daily-on-this-day/duration_plan.py": {
       "bytes": 2373,
@@ -72,8 +72,8 @@
       "sha256": "b6845264c4e14fc9191c4b8ac56031aaaa81468e54176f0bd474d99ae89e5bd5"
     },
     "runtime/daily-on-this-day/render-template.py": {
-      "bytes": 15850,
-      "sha256": "5236614ebcb4760f3e51b2eebaa37a104689c82523c2aecde7eb6f1642aef43c"
+      "bytes": 15851,
+      "sha256": "2dc5423141aa7ee269943cd24a0c9a4e21e57631987d7471785362471d7680b6"
     },
     "runtime/daily-on-this-day/static-photo-check.py": {
       "bytes": 3748,
@@ -96,8 +96,8 @@
       "sha256": "73391624e0d818882b5e66edd1679a2bd8fd79d63e9d0b27c659c8fb60ba98b7"
     },
     "scripts/run.py": {
-      "bytes": 10534,
-      "sha256": "0eceb0e061703d64328e918ea20793b9d53879d0bf959d8830df276638f3df81"
+      "bytes": 10535,
+      "sha256": "48cd6baa2e721c08c0ae117711c80d558874034122101022fcb820a538bb8184"
     },
     "tests/smoke_cpu.py": {
       "bytes": 2991,
@@ -108,8 +108,8 @@
       "sha256": "1e2e96c17a184e12bb4ccf22ac30b6c6f85ce43a5ff142732b13a0078acbc62b"
     },
     "tests/test_local.py": {
-      "bytes": 9908,
-      "sha256": "10f1da6dfffbbb37e9b21f0d689816bfdba77c0e96ea565f99fc54ccb26708e6"
+      "bytes": 10932,
+      "sha256": "c09451e114706e2c1c3cda876830a8351fbbab777f3ba2457df5ea049ba2aa7b"
     }
   }
 }

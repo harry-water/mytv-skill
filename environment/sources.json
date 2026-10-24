@@ -20,7 +20,6 @@
     "existing_host_pure_shell_executed": true,
     "dependencies_fetched": true,
     "regression_cases": 22,
-    "R1_entry_sha256": "240b921f3abb551a02f50df961a165c1b4eee13d98334a395939b7cec4fc179d",
     "full_film_regenerated": false,
     "clean_os_or_empty_store": false,
     "new_driver_install_tested": false
